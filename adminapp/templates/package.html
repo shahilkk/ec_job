@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container-fluid">
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card shadow border-0 mb-7 my-auto">
+            <div class="card-header text-right mr-auto">
+                <h5 class="mb-0 text-center"> Revenue Details</h5>
+            </div>
+            <div class="table-responsive ">
+                <table id="example" class="table table-hover table-striped table-bordered nowrap"
+                    style="width:100%">
+                    <thead class="thead-light head">
+                        <tr>
+                            <th style="font-weight: 900; background-color: bisque;">Photo</th>
+                            <th style="font-weight: 900; background-color: bisque;">First name</th>
+                            <th style="font-weight: 900; background-color: bisque;">Package</th>
+                            <th style="font-weight: 900; background-color: bisque;">Phone Number</th>
+                            <th style="font-weight: 900; background-color: bisque;">Pincode</th>
+                            <th style="font-weight: 900; background-color: bisque;">email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        {% for i in viewpackage %}
+                    <tr>
+                        <td><img src="/media/{{ i.user.profilePic }}" class="avatar avatar-sm rounded-circle me-5"
+                                alt=""></td>
+                        <td> {{ i.user.name }}  </td>
+                        <td> {{ i.selected_Package }} </td>
+                        <td> {{ i.user.phone  }} </td>
+                        <td> {{ i.user.pincode }} </td>
+                        <td> {{ i.user.email }} </td>
+                        <!-- <td>{{ i.user.phone</td>
+                        <td>{{ i.workerlogin.status }}</td> -->
+                        
+
+                        <!-- <td class="text-end"><a href="accept/{{ i.workerlogin_id }}"
+                                class="btn btn-sm btn-neutral">Accept</a>
+                            <a href="delect/{{ i.workerlogin_id }}" type="button"
+                                class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                    class="bi bi-trash"></i></a>
+                        </td> -->
+                    </tr>
+                    {% endfor %}
+
+
+                    </tr>
+
+
+
+
+
+                        <!-- <tr>
+                           <td>shahil</td>
+                           <td>luxury</td>
+                           <td>9207218025</td>
+                           <td>Arimbra</td>
+                           <td>jcgvmgmhg@gamil.com</td>
+
+                        </tr>
+                        <tr>
+                          <td>sreehari</td>
+                          <td>Standard Package</td>
+                          <td>9287649879</td>
+                          <td>mongam</td>
+                          <td>lkfsmgmhg@gamil.com</td>
+
+                        </tr>
+                        <tr>
+                          <td>shadil</td>
+                          <td>Super Premium</td>
+                          <td>873487355</td>
+                           <td>kondotty</td>
+                           <td>fdyrdhfdr@gamil.com</td>
+
+                        </tr>
+                        <tr>
+                          <td>harshin</td>
+                          <td>Premium Package</td>
+                          <td>0998718025</td>
+                          <td>kondotty</td>
+                          <td>kjhgfd@gamil.com</td>
+                        </tr>
+                        <tr>
+                          <td>aswandh</td>
+                          <td>Standard Package</td>
+                          <td>23456666677</td>
+                          <td>chelari</td>
+                          <td>owydygdh@gamil.com</td>
+
+                        </tr> -->
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %} 

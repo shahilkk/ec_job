@@ -1,0 +1,77 @@
+html,body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Source Serif 4', sans-serif;
+
+    }
+
+   
+
+  
+
+    .menu a {
+
+      padding-left: 20px;
+      transition: .3s linear;
+      border-radius: 4px;
+
+    }
+
+    .menu a:hover,
+    .menu li a:active,
+    .navbar-light .navbar-nav .nav-link:focus {
+
+      transform: scale(1.1);
+      background: #525252;
+    }
+
+
+
+    .link a {
+      color: black;
+      font-size: 17px;
+      padding: 1px;
+      transition: .3s linear;
+      border-radius: 4px;
+
+
+    }
+
+    .link a:hover {
+
+      transform: scale(1.1);
+      background: #eef2f3;
+    }
+
+    .navbar-light .navbar-nav .active>.nav-link,
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .show>.nav-link {
+      color: #fff;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: #ffff;
+    }
+     /* sticky */
+
+    /* .navb{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      transition: all 0.1s ease-in-out;
+     } */
+  /* nav .fixed{
+   opacity: 0;
+   transform: translateY(-50%);
+ }
+  nav .active{
+   transition: all 0.4s ease-in-out;
+   background-image: linear-gradient(to left,#000428,#004e92);
+   opacity: 1;
+   transform: none;
+ } */
+    
+   

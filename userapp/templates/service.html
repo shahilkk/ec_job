@@ -1,0 +1,329 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<style>
+    body{
+              padding-top: 100px;
+
+    }
+    .navbar{
+      background-image: linear-gradient(to left, #000428, #004e92);
+
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    .button {
+        width: 200px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin: 20px;
+        height: 55px;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .5s ease-in-out;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+    }
+
+    .button:hover {
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+    .button:focus {
+        outline: none;
+    }
+
+    .button {
+        background-image: linear-gradient(to left,#000428,#004e92);
+        box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+    }
+</style>
+
+
+
+<div class="container-fluid bg-light  mt-5 ">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/service/p7.webp' %}" class="d-block img-fluid " alt="...">
+                        <div class="carousel-caption d-block d-md-block bread ">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- image and bread -->
+
+    <!--  end image and bread -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 pt-2">
+            <div class="border-bottom pb-2 ml-2">
+                <h1>Service</h1>
+            </div>
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3  active"
+                        id="allcategories" href="#!">All Categories</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="elect"
+                        href="#!">Electronics & Appliances</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="homemaintance"
+                        href="#!">Home Maintenance</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="cleaningservice"
+                        href="#!">Cleaning Service</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="eventoccasion"
+                        href="#!">Events & Occasions</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="automobile"
+                        href="#!">Automobile Services</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="healthpersonal"
+                        href="#!">Health & Personals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="otherservice"
+                        href="#!">Others</a>
+                </div>
+            </div>
+        </div>
+        <!-- all cat -->
+        <div class="col-lg-8 col-md-8 col-sm-6" id="allcat">
+            <h1>Electronics & Appliances</h1>
+            <div class="section">
+                <a href="view/Computer Repair"><input type="button" value="Computer Repair" class="button"></a>
+                <a href="view/Mobile Repair"><input type="button" value="Mobile Repair" class="button"></a>
+                <a href="view/Tv Repair"><input type="button" value="Tv Repair" class="button"></a>
+                <a href="view/Cctv Repair"><input type="button" value="Cctv Repair" class="button"></a>
+                <a href="view/Printer Repair"><input type="button" value="Printer Repair" class="button"></a>
+                <a href="view/Invertor Repair"><input type="button" value="Invertor Repair" class="button"></a>
+                <a href="view/Water Pump Repair"><input type="button" value="Water Pump Repair" class="button"></a>
+                <a href="view/Chimney Repair"><input type="button" value="Chimney Repair" class="button"></a>
+                <a href="view/Electric Geyser Repair"><input type="button" value="Electric Geyser Repair" class="button"></a>
+                <a href="view/Dishwasher Repair"><input type="button" value=" Dishwasher Repair" class="button"></a>
+                <a href="view/AC Repair"><input type="button" value="AC Repair" class="button"></a>
+                <a href="view/DTH Repair"><input type="button" value="DTH Repair" class="button"></a>
+                <a href="view/Refrigerator Repair"><input type="button" value="Refrigerator Repair" class="button"></a>
+                <a href="view/Washing Machine Repair"><input type="button" value="Washing Machine Repair" class="button"></a>
+            </div>
+            <h1>Home Maintenance</h1>
+            <div class="section">
+                <a href="view/Carpentor"><input type="button" value="Carpentor" class="button"></a>
+                <a href="view/Plumber"><input type="button" value="Plumber" class="button"></a>
+                <a href="view/Electrician"><input type="button" value="Electrician" class="button"></a>
+                <a href="view/Painting"><input type="button" value="Painting" class="button"></a>
+                <a href="view/Interior Designor"><input type="button" value="Interior Designor" class="button"></a>
+                <a href="view/Architect"><input type="button" value="Architect" class="button"></a>
+                <a href="view/Civil Contractor"><input type="button" value="Civil contractor" class="button"></a>
+                <a href="view/Rainwater Harvesting"><input type="button" value="Rainwater Harvesting" class="button"></a>
+                <a href="view/Gardeners"><input type="button" value="Gardeners" class="button"></a>
+                <a href="view/Wielding Work"><input type="button" value="Wielding Work" class="button"></a>
+                <a href="view/Solar Heater Service"><input type="button" value="Solar Heater Service" class="button"></a>
+                <a href="view/False Celling"><input type="button" value="False Celling" class="button"></a>
+                <a href="view/Masonry Works"><input type="button" value="Masonry Works" class="button"></a>
+                <a href="view/Water Proofing"><input type="button" value="Water Proofing" class="button"></a>
+                <a href="view/Aluminum Fabrication"><input type="button" value="Aluminum Fabrication" class="button"></a>
+            </div>
+            <h1>Cleaning Service</h1>
+            <div class="section">
+                <a href="view/Pest Control"><input type="button" value="Pest Control" class="button"></a>
+                <a href="view/Laundary"><input type="button" value="Laundary" class="button"></a>
+                <a href="view/Home Cleaing"><input type="button" value="Home Cleaing" class="button"></a>
+                <a href="view/Water Tank Cleaing"><input type="button" value="Water Tank Cleaing" class="button"></a>
+                <a href="view/Bathroom Cleaing"><input type="button" value="Bathroom Cleaing" class="button"></a>
+                <a href="view/Drainage Cleaning"><input type="button" value="Drainage Cleaning" class="button"></a>
+                <a href="view/Chimney Cleaning"><input type="button" value="Chimney Cleaning" class="button"></a>
+                <a href="view/Glass Cleaning"><input type="button" value="Glass Cleaning" class="button"></a>
+                <a href="view/Aquarium Cleaning"><input type="button" value="Aquarium Cleaning" class="button"></a>
+                <a href="view/Kitchen Cleaning"><input type="button" value="Kitchen Cleaning" class="button"></a>
+                <a href="view/Termite Cleaning"><input type="button" value="Termite Cleaning" class="button"></a>
+
+            </div>
+            <h1>Events & Occasions</h1>
+            <div class="section">
+                <a href="view/Wedding Planner"><input type="button" value="Wedding Planner" class="button"></a>
+                <a href="view/Cake Delivery"><input type="button" value="Cake Delivery " class="button"></a>
+                <a href="view/Birthday Planner"><input type="button" value="Birthday Planner" class="button"></a>
+                <a href="view/Mehendi Planner"><input type="button" value="Mehendi Planner" class="button"></a>
+                <a href="view/Baby Shower"><input type="button" value="Baby Shower" class="button"></a>
+                <a href="view/Flower Decor"><input type="button" value="Flower Decor" class="button"></a>
+                <a href="view/Sangeet Planner"><input type="button" value="Sangeet Planner" class="button"></a>
+                <a href="view/Wedding Photography"><input type="button" value="Wedding Photography" class="button"></a>
+                <a href="view/Pre-Wedding Photography"><input type="button" value=" Pre-Wedding Photography" class="button"></a>
+                <a href="view/Event Photography"><input type="button" value="Event Photography" class="button"></a>
+                <a href="view/Baby Photography"><input type="button" value="Baby Photography" class="button"></a>
+                <a href="view/Portraits & Portfolio Shoot"><input type="button" value="Portraits & Portfolio Shoot" class="button"></a>
+            </div>
+            <h1>Automobile Services</h1>
+            <div class="section">
+                <a href="view/Car Wash"><input type="button" value="Car Wash" class="button"></a>
+                <a href="view/Car Repair"><input type="button" value="Car Repair" class="button"></a>
+                <a href="view/Bike Wash"><input type="button" value="Bike Wash" class="button"></a>
+                <a href="view/Bike Repair"><input type="button" value="Bike Repair" class="button"></a>
+                <a href="view/Driving school"><input type="button" value="Driving school" class="button"></a>
+                <a href="view/BreakDown Assistance"><input type="button" value="BreakDown Assistance" class="button"></a>
+
+            </div>
+            <h1>Health & Personals</h1>
+            <div class="section">
+                <a href="view/Physiotheraphy"><input type="button" value="Physiotheraphy " class="button"></a>
+                <a href="view/Yoga & Meditation"><input type="button" value="Yoga & Meditation" class="button"></a>
+                <a href="view/Beauty Service"><input type="button" value="Beauty Service" class="button"></a>
+                <a href="view/Tailoring"><input type="button" value="Tailoring" class="button"></a>
+                <a href="view/House Keeping"><input type="button" value="House Keeping" class="button"></a>
+                <a href="view/Barbber"><input type="button" value="Barbber" class="button"></a>
+                <a href="view/Fitness Trainer"><input type="button" value="Fitness Trainer " class="button"></a>
+                <a href="view/Tattoo Artists"><input type="button" value="Tattoo Artists" class="button"></a>
+                <a href="view/Astrology"><input type="button" value="Astrology" class="button"></a>
+                <a href="view/Security Guards"><input type="button" value="Security Guards" class="button"></a>
+                <a href="view/Bridal makeup"><input type="button" value="Bridal makeup" class="button"></a>
+                <a href="view/Dietitian"><input type="button" value="Dietitian" class="button"></a>
+            </div>
+            <h1>Others</h1>
+            <div class="section">
+                <a href="view/Tution Teacher"><input type="button" value="Tution Teacher " class="button"></a>
+                
+            </div>
+        </div>
+        <!-- end all cat -->
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewele" style="display: none;">
+            <h1>Electronics & Appliances</h1>
+            <div class="section">
+                <a href="view/Computer Repair"><input type="button" value="Computer Repair" class="button"></a>
+                <a href="view/Mobile Repair"><input type="button" value="Mobile Repair" class="button"></a>
+                <a href="view/Tv Repair"><input type="button" value="Tv Repair" class="button"></a>
+                <a href="view/Cctv Repair"><input type="button" value="Cctv Repair" class="button"></a>
+                <a href="view/Printer Repair"><input type="button" value="Printer Repair" class="button"></a>
+                <a href="view/Invertor Repair"><input type="button" value="Invertor Repair" class="button"></a>
+                <a href="view/Water Pump Repair"><input type="button" value="Water Pump Repair" class="button"></a>
+                <a href="view/Chimney Repair"><input type="button" value="Chimney Repair" class="button"></a>
+                <a href="view/Electric Geyser Repair"><input type="button" value="Electric Geyser Repair" class="button"></a>
+                <a href="view/Dishwasher Repair"><input type="button" value=" Dishwasher Repair" class="button"></a>
+                <a href="view/AC Repair"><input type="button" value="AC Repair" class="button"></a>
+                <a href="view/DTH Repair"><input type="button" value="DTH Repair" class="button"></a>
+                <a href="view/Refrigerator Repair"><input type="button" value="Refrigerator Repair" class="button"></a>
+                <a href="view/Washing Machine Repair"><input type="button" value="Washing Machine Repair" class="button"></a>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewhome" style="display: none;">
+            <h1>Home Maintenance</h1>
+            <div class="section">
+                <a href="view/Carpentor"><input type="button" value="Carpentor" class="button"></a>
+                <a href="view/Plumber"><input type="button" value="Plumber" class="button"></a>
+                <a href="view/Electrician"><input type="button" value="Electrician" class="button"></a>
+                <a href="view/Painting"><input type="button" value="Painting" class="button"></a>
+                <a href="view/Interior Designor"><input type="button" value="Interior Designor" class="button"></a>
+                <a href="view/Architect"><input type="button" value="Architect" class="button"></a>
+                <a href="view/Civil Contractor"><input type="button" value="Civil contractor" class="button"></a>
+                <a href="view/Rainwater Harvesting"><input type="button" value="Rainwater Harvesting" class="button"></a>
+                <a href="view/Gardeners"><input type="button" value="Gardeners" class="button"></a>
+                <a href="view/Wielding Work"><input type="button" value="Wielding Work" class="button"></a>
+                <a href="view/Solar Heater Service"><input type="button" value="Solar Heater Service" class="button"></a>
+                <a href="view/False Celling"><input type="button" value="False Celling" class="button"></a>
+                <a href="view/Masonry Works"><input type="button" value="Masonry Works" class="button"></a>
+                <a href="view/Water Proofing"><input type="button" value="Water Proofing" class="button"></a>
+                <a href="view/Aluminum Fabrication"><input type="button" value="Aluminum Fabrication" class="button"></a>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewclean" style="display: none;">
+            <h1>Cleaning Service</h1>
+            <div class="section">
+                <a href="view/Pest Control"><input type="button" value="Pest Control" class="button"></a>
+                <a href="view/Laundary"><input type="button" value="Laundary" class="button"></a>
+                <a href="view/Home Cleaing"><input type="button" value="Home Cleaing" class="button"></a>
+                <a href="view/Water Tank Cleaing"><input type="button" value="Water Tank Cleaing" class="button"></a>
+                <a href="view/Bathroom Cleaing"><input type="button" value="Bathroom Cleaing" class="button"></a>
+                <a href="view/Drainage Cleaning"><input type="button" value="Drainage Cleaning" class="button"></a>
+                <a href="view/Chimney Cleaning"><input type="button" value="Chimney Cleaning" class="button"></a>
+                <a href="view/Glass Cleaning"><input type="button" value="Glass Cleaning" class="button"></a>
+                <a href="view/Aquarium Cleaning"><input type="button" value="Aquarium Cleaning" class="button"></a>
+                <a href="view/Kitchen Cleaning"><input type="button" value="Kitchen Cleaning" class="button"></a>
+                <a href="view/Termite Cleaning"><input type="button" value="Termite Cleaning" class="button"></a>
+
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewevent" style="display: none;">
+            <h1>Events & Occasions</h1>
+            <div class="section">
+                <a href="view/Wedding Planner"><input type="button" value="Wedding Planner" class="button"></a>
+                <a href="view/Cake Delivery"><input type="button" value="Cake Delivery " class="button"></a>
+                <a href="view/Birthday Planner"><input type="button" value="Birthday Planner" class="button"></a>
+                <a href="view/Mehendi Planner"><input type="button" value="Mehendi Planner" class="button"></a>
+                <a href="view/Baby Shower"><input type="button" value="Baby Shower" class="button"></a>
+                <a href="view/Flower Decor"><input type="button" value="Flower Decor" class="button"></a>
+                <a href="view/Sangeet Planner"><input type="button" value="Sangeet Planner" class="button"></a>
+                <a href="view/Wedding Photography"><input type="button" value="Wedding Photography" class="button"></a>
+                <a href="view/Pre-Wedding Photography"><input type="button" value=" Pre-Wedding Photography" class="button"></a>
+                <a href="view/Event Photography"><input type="button" value="Event Photography" class="button"></a>
+                <a href="view/Baby Photography"><input type="button" value="Baby Photography" class="button"></a>
+                <a href="view/Portraits & Portfolio Shoot"><input type="button" value="Portraits & Portfolio Shoot" class="button"></a>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewauto" style="display: none;">
+            <h1>Automobile Services</h1>
+            <div class="section">
+                <a href="view/Car Wash"><input type="button" value="Car Wash" class="button"></a>
+                <a href="view/Car Repair"><input type="button" value="Car Repair" class="button"></a>
+                <a href="view/Bike Wash"><input type="button" value="Bike Wash" class="button"></a>
+                <a href="view/Bike Repair"><input type="button" value="Bike Repair" class="button"></a>
+                <a href="view/Driving school"><input type="button" value="Driving school" class="button"></a>
+                <a href="view/BreakDown Assistance"><input type="button" value="BreakDown Assistance" class="button"></a>
+
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewhealth" style="display: none;">
+            <h1>Health & Personals</h1>
+            <div class="section">
+                <a href="view/Physiotheraphy"><input type="button" value="Physiotheraphy " class="button"></a>
+                <a href="view/Yoga & Meditation"><input type="button" value="Yoga & Meditation" class="button"></a>
+                <a href="view/Beauty Service"><input type="button" value="Beauty Service" class="button"></a>
+                <a href="view/Tailoring"><input type="button" value="Tailoring" class="button"></a>
+                <a href="view/House Keeping"><input type="button" value="House Keeping" class="button"></a>
+                <a href="view/Barbber"><input type="button" value="Barbber" class="button"></a>
+                <a href="view/Fitness Trainer"><input type="button" value="Fitness Trainer " class="button"></a>
+                <a href="view/Tattoo Artists"><input type="button" value="Tattoo Artists" class="button"></a>
+                <a href="view/Astrology"><input type="button" value="Astrology" class="button"></a>
+                <a href="view/Security Guards"><input type="button" value="Security Guards" class="button"></a>
+                <a href="view/Bridal makeup"><input type="button" value="Bridal makeup" class="button"></a>
+                <a href="view/Dietitian"><input type="button" value="Dietitian" class="button"></a>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12" id="viewother" style="display: none;">
+            <h1>Others</h1>
+            <div class="section">
+                <a href="view/Tution Teacher"><input type="button" value="Tution Teacher " class="button"></a>
+                
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/service.js' %}"></script>
+
+{% endblock %}

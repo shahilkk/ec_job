@@ -1,0 +1,719 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- en js -->
+
+
+<!--  -->
+
+<!--  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+  <!-- validation cdn -->
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <!-- end validation -->
+  <!-- modalshow -->
+
+
+  <!-- end modal shoe -->
+  <link rel="stylesheet" href="{% static 'css/master.css' %}">
+  <title>website</title>
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      /* padding-top: 100px; */
+    }
+
+    .btn-grad2 {
+      /* margin: 10px;
+       padding: 15px 45px; */
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200%;
+      /* color: rgb(0, 0, 0); */
+      /* box-shadow: 0 0 20px #eee; */
+      border-radius: 10px;
+      display: block;
+    }
+
+    .btn-grad2:hover {
+      background-position: right center;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+    }
+
+
+    /* modal */
+    .signup_v4 .social-area {
+      text-align: center;
+      padding-top: 14px
+    }
+
+    .signup_v4 .social-area .title {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      color: #bdc3c7;
+      position: relative
+    }
+
+    .signup_v4 .social-area .text {
+      font-size: 17px;
+      font-weight: 400;
+      color: #143250
+    }
+
+    .signup_v4 .social-area .title::before {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(0, 0, 0, .2);
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 100%;
+      margin-left: 7px
+    }
+
+    .signup_v4 .social-area .title::after {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(0, 0, 0, .2);
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 100%;
+      margin-right: 7px
+    }
+
+    .signup_v4 ul.social-links {
+      padding: 0;
+      margin: 0
+    }
+
+    .signup_v4 .social-area .social-links li {
+      display: inline-block
+    }
+
+    .signup_v4 .social-area .social-links li a i {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      line-height: 50px;
+      display: inline-block;
+      color: #fff;
+      margin: 0 5px;
+      -webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+      box-shadow: 0 5px 10px rgb(0 0 0 / 15%)
+    }
+
+    .signup_v4 .social-area .social-links li a i.fa-facebook-f {
+      background: #0069f7
+    }
+
+    .signup_v4 .social-area .social-links li a i.fa-google-plus-g {
+      background: #d1062c
+    }
+
+    .signup_v4 .nav-tabs .nav-link.active {
+      background: #143250
+    }
+
+    .signup_v4 .nav-tabs .nav-link {
+      background: #bdc3c7
+    }
+
+    .signup_v4 .nav-tabs .nav-link {
+      border: 0;
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 0;
+      color: #fff
+    }
+
+    .signup_v4 .nav-tabs li.nav-item {
+      width: 50%
+    }
+
+    .signup_v4 .card-body {
+      padding: 0px
+    }
+
+    .signup_v4 .card-body .tab-content {
+      padding: 0 1.25rem 1.75em
+    }
+
+    /* end modal */
+    .nav {
+      background: transparent;
+    }
+
+    .white {
+      color: white;
+    }
+
+    .pro a {
+      color: white;
+    }
+
+    .ico a {
+      border-radius: 50%;
+    }
+
+    .error {
+      color: red;
+    }
+
+    @media (max-width:576px) {
+      .t1 {
+        font-size: 30px;
+
+      }
+
+
+    }
+
+    .navbar.scrolled {
+      background-image: linear-gradient(to left, #000428, #004e92);
+      transition: background 500ms
+    }
+
+    .fot {
+      background-image: linear-gradient(to left, #000428, #004e92);
+
+    }
+
+    /* button top */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    /* end button top */
+  </style>
+
+</head>
+<div class="container-fluid">
+
+  <body data-spy="scroll" data-target="#navbarSupportedContent">
+    <div class="row" style="margin: 0;">
+      <div class="col-lg-12 ">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top   " id="mainNavbar" role="navigation">
+          <div class="container-fluid">
+
+
+            <!-- Just an image -->
+            <a class="navbar-brand  fab fa-wolf-pack-battalion t1"
+              style="font-size: 40px;font-weight: 400; color: white;" href="#">
+              EC
+              job</a>
+            <!-- just image end -->
+
+            {% if 'userid' in request.session %}
+            <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;"
+              type="button" onclick="location.href='/user/logout'" value="Logout">
+            {% else %}
+            <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;"
+              data-toggle="modal" data-target="#signmodal" type="button" value="Login">
+            {% endif %}
+
+
+            <!-- <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;"
+              data-toggle="modal" data-target="#signmodal" type="button" value="Login"> -->
+            <!-- <a href="" class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;">Worker Registratin</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ml-auto menu">
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-home " href="/user/home"> Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-cog " href="/user/service"> Service<span
+                      class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-images " href="/user/gallery"> Gallery<span
+                      class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item active">
+                  <a class="nav-link fas fa-comments" href="chat"> Discussion<span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-phone-alt" href="/user/contacts"> Contact Us<span
+                      class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-user" href="/user/profile"> Profile<span
+                      class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+</div>
+<!-- modAL -->
+<div id="for">
+
+  <div class="modal fade" id="signmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- con -->
+        <div class="card signup_v4 mb-30">
+          <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation"> <a class="nav-link active" id="login-tab" data-toggle="tab"
+                  href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="register-tab" data-toggle="tab"
+                  href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a> </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
+                <form id="loginform" method="post" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <div class="form-row">
+
+                    <div class="form-group col-md-12"> <label for="inputName">Your Username</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group col-md-12"> <label for="inputName">Your Password</label>
+                      <input type="password" class="form-control" name="pass" id="pass"
+                        placeholder="Enter your password">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="custom-checkbox d-block"> <label class="custom-control custom-checkbox checkbox-lg">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <div class="custom-control-label" for="customCheck1">Remember Password</div>
+                          </label> </div> <a href="#" target="">Forgot Password?</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-3 text-center "> <button class="btn btn-primary " type="submit">Login</button>
+                  </div>
+                </form>
+                <div class="social-area">
+                  <h3 class="title">Or</h3>
+                  <h4><a href="registration">Register As worker</a></h4>
+                  <p class="text">Sign In with social media</p>
+                  <ul class="social-links">
+                    <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
+                    <li> <a href="#"> <i class="fab fa-google-plus-g"></i> </a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade " id="register" role="tabpanel" aria-labelledby="register-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Register</h4>
+                <form id="reg" method="post" action="{% url 'singup' %}">
+                  {% if status == 1 %}
+                  <div class="alert alert-success" role="alert">
+                    Registration succesfully
+                  </div>
+                  {% endif %}
+                  <!-- {% csrf_token %} -->
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Name</label> <input type="text"
+                        class="form-control" id="inputName" name="regname" placeholder="Enter your name"> </div>
+                    <div class="form-group col-md-12"> <label for="inputUserName">Your Username</label> <input
+                        type="text" class="form-control" name="reguser" id="inputUserName"
+                        placeholder="Enter your username"> </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputPone">Your Phone Number</label> <input
+                        type="text" class="form-control" id="inputPone" name="regphone"
+                        placeholder="Enter your Phone Number">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputEmail">Your Email Address</label> <input
+                        type="email" class="form-control" id="inputEmail" name="regemail"
+                        placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group col-md-12"> <label for="password">Your Password</label> <input
+                        type="password" class="form-control" id="password" name="regpass"
+                        placeholder="Enter your password">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="cPass">Your Confirm Password</label> <input
+                        type="password" class="form-control" id="cPass" name="regconpass"
+                        placeholder="Enter your confirm password">
+                    </div>
+
+                  </div>
+                  <div class="form-group form-row">
+                    <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input
+                          type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control-label" for="customCheck1">I agree with <a href="#"
+                            target="_blank">terms and conditions</a></div>
+                      </label> </div>
+                  </div>
+                  <hr class="mt-3 mb-4">
+                  <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                      <div class="custom-checkbox d-block"> <a href="#login"
+                          class="nav-link-inline font-size-sm">Already
+                          have an account? Login</a> </div> <button class="btn btn-primary mt-3 mt-sm-0" type="submit"
+                        id="reges">Register</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end con -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+<!-- nav-end -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-arrow-up"></i></button>
+
+
+{% block content %}
+{% endblock %}
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4 fot">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left ">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left pb-3 " style="margin: 0;">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 white">
+        <h6 class="text-uppercase mb-4 font-weight-bold ">Ec_job</h6>
+        <p>Welcome to Ec_job You may use our services through our website www.ecjob.in (“Website”) . Our Website been
+          created to provide information about our company and services to the visitors and user of services, whether
+          accessible to you via web, or other platform (our services, together with the Site, are the "Services").</p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 pro white">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+        <p>
+          <a href="home">Home</a>
+        </p>
+        <p>
+          <a href="service">Service</a>
+        </p>
+        <p>
+          <a href="contact">Contact Us</a>
+        </p>
+        <p>
+          <a href="profile">Profile</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 pro">
+        <h6 class="text-uppercase mb-4 font-weight-bold white ">Our Services</h6>
+        <p>
+          <a href="service">Electronics & Appliances</a>
+        </p>
+        <p>
+          <a href="service">Home Maintenance</a>
+        </p>
+        <p>
+          <a href="service">Cleaning Service</a>
+        </p>
+        <p>
+          <a href="service">Events & Occasions</a>
+        </p>
+        <p>
+          <a href="service">Automobile Services</a>
+        </p>
+        <p>
+          <a href="service">Others</a>
+        </p>
+      </div>
+
+      <!-- Grid column -->
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 white">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+        <p>
+          <i class="fas fa-home mr-3"></i> Arimbra, Malappuram
+        </p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> ecjob@gmail.com
+        </p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> 9207634567
+        </p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89
+        </p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8">
+
+        <!--Copyright-->
+        <p class="text-center text-md-left white">© 2020 Copyright:
+
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <section class="mb-4 ico">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-facebook-f "></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light  btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-instagram"></i></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+</footer>
+
+<!-- end footer -->
+
+<script src="{% static 'js/master.js' %}"></script>
+
+
+
+
+<script>
+
+  $(document).ready(() => {
+    console.log('page loaded')
+
+  })
+  //  $(document).ready(()=>{
+  //             $('#reges').click(()=>{
+  //                 $.ajax({
+  //                     url:'signup',
+  //                     type:'post',
+  //                     data:{
+  //                         'name':$('#inputName').val(),
+  //                         'username':$('#inputUserName').val(),
+  //                         'phone':$('#inputPone').val(),
+  //                         'email':$('#inputEmail').val(),
+  //                         'password':$('#password').val(),
+  //                     },
+  //                     success:function(responce){
+  //                         alert(responce.msg)
+  //                     }
+  //                 })
+  //             })
+  //         })
+
+
+
+
+
+
+  $('#reg').validate({
+    rules: {
+      regname: {
+        required: true,
+        minlength: 6,
+      },
+      reguser: {
+        required: true,
+        minlength: 6,
+
+      },
+      regphone: {
+        required: true,
+        number: true,
+        maxlength: 10,
+        minlength: 10,
+      },
+      regemail: {
+        required: true,
+        email: true,
+
+      },
+      regpass: {
+        required: true,
+        minlength: 5,
+      },
+      regconpass: {
+        required: true,
+        equalTo: "#password",
+      }
+    },
+    messages: {
+      regname: {
+        required: "Enter your user  name",
+        minlength: "alteast 6",
+      },
+      reguser: {
+        required: "Enter your  username",
+        minlength: "alteast 6",
+      },
+      regphone: {
+        required: 'enter phone number',
+        number: 'valid phone number',
+        maxlength: 'no more than 10  ',
+        minlength: 'no less than 10',
+      },
+      regemail: {
+        required: "enter email id",
+        email: "enter a valid email id",
+
+      },
+      regpass: {
+        required: "Enter your  password",
+        minlength: "alteast 6",
+      },
+      regconpass: {
+        required: "please fill this field",
+        equalTo: "password must be same"
+      }
+
+    },
+    SubmitHandler: function (reg) {
+      form.submit();
+    }
+  })
+
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    -->
+
+
+</body>
+
+</html>

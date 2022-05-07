@@ -1,0 +1,276 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
+
+<style>
+  body {
+    padding-top: 100px;
+
+  }
+
+  .navbar {
+    background-image: linear-gradient(to left, #000428, #004e92);
+
+  }
+
+  .error {
+    color: red;
+  }
+
+  .form-white {
+    color: black;
+  }
+</style>
+
+
+<section class="  gradient-custom-2" onload="loadCategories()">
+  <div class="container-fluid py-5 ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <form action="workreg" id="form1" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+
+                    <div class="mb-4 pb-2">
+                      <select class="select  form-control form-control-lg" name="category" id="selectbox">
+                        <option value="" disabled selected>Service you Providing</option>
+                      </select>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select name="subcategory"  class="select   form-control form-control-lg" id="SubCategories"
+                          style="display: none;">
+
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <!-- <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="inputbox" style="display: none;" placeholder="The Job you Provide"
+                          class="form-control form-control-lg value" />
+                      </div>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <label class="form-label " for="">First name</label>
+                          <input type="text" id="firstname" name="firstname"
+                            class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <label class="form-label" for="">Last name</label>
+                          <input type="text" id="lastname" name="lastname" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Username</label>
+                          <input type="text" id="" name="username" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-4 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Password</label>
+                          <input type="text" id="" name="password" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-4 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Conform Password</label>
+                          <input type="text" id="password1" name="c_password"
+                            class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for="">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for="">Phone Number </label>
+                        <input type="text" id="mobile" name="phone" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for="">Upload Photo </label>
+                        <input type="file" id="" name="workimg" class="  value" />
+                      </div>
+                    </div>
+
+                    <div class="form-group form-row mt-2"> <label class="col-md-3 col-form-label user_group">Job
+                        Type</label>
+                      <div class="col-md-9 pt-1">
+                        <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                            name="radio" id="inlineRadio1" value="Full Time"> <label class="form-check-label"
+                            for="inlineRadio1">Full Time</label> </div>
+                        <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                            name="radio" id="inlineRadio2" value="Part Time"> <label class="form-check-label"
+                            for="inlineRadio2">Part Time</label> </div>
+                        <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                            name="radio" id="inlineRadio2" value="Casual"> <label class="form-check-label"
+                            for="inlineRadio2">Casual</label> </div>
+                        <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                            name="radio" id="inlineRadio2" value="none"> <label class="form-check-label"
+                            for="inlineRadio2">None</label> </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 bg-indigo text-white">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5" style="color: #4835d4;">Contact Details</h3>
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
+                        <label class="form-label" for="">Address</label>
+                        <input type="text" name="address" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
+                        <label class="form-label" for="">Additional Information</label>
+                        <input type="text" id="" name="addition" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Date of Birth</label>
+                          <input type="date" id="datepicker" name="dob" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Age</label>
+                          <input type="text" id="age" name="age" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">pin Code</label>
+                          <input type="text" id="pin" name="pin" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Place</label>
+                          <input type="text" id="place" name="place" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">District</label>
+                          <input type="text" id="" name="district" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">State</label>
+                          <input type="text" id="" name="state" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Location</label>
+                          <input type="text" id="" name="loca" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Education Qualification</label>
+                          <input type="text" id="" name="educ" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="form-check d-flex justify-content-start mb-4 pb-3 ">
+                      <input class="form-check-input me-3" type="checkbox" value="" id="" />
+                      <label class="form-check-label form-white" for="">
+                        I do accept the <a href="#!" class="form-white"><u>Terms and Conditions</u></a> of EC job..
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-light btn-lg" id="btnsubmit" data-mdb-ripple-color="dark"
+                      style="background-color: #004e92;">Register</button>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static 'js/registration.js' %}"></script>
+<script>
+
+
+</script>
+{% endblock %}

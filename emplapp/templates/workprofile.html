@@ -1,0 +1,432 @@
+{% extends 'mat.html' %}
+{% block content %}
+{% load static %}
+<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/ie-emulation-modes-warning.js"></script> -->
+
+<link rel="stylesheet" href="{% static 'css/review.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<style>
+  .card-img {
+    height: 240px;
+
+  }
+
+  .filebtn {
+    border-radius: 50%;
+  }
+
+  .ebtn {
+    text-decoration: none;
+
+  }
+
+  .addbtn {
+    border-radius: 50%;
+    background-color: rgb(62, 62, 192);
+  }
+
+  .submitbutton {
+    background-color: rgb(0, 65, 126);
+    color: white;
+    border-radius: 30px;
+  }
+
+
+.img{
+  height: 300px;
+  width: 100%;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<div class="container">
+  <div class="main-body">
+
+    <!-- Breadcrumb -->
+    <!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+           
+          </ol>
+        </nav> -->
+    <!-- /Breadcrumb -->
+
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="/media/{{ viewprofile.w_profilePic }}" alt="Admin" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4>{{viewprofile.first_name}} {{viewprofile.last_name}}</h4>
+                <p class="text-secondary mb-1">{{viewprofile.category}},{{viewprofile.subcategory}}</p>
+                <p class="text-muted font-size-sm">{{viewprofile.place}},{{viewprofile.district}}</p>
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#editmodal">Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.first_name}} {{viewprofile.last_name}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.w_email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Phone</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.w_phone}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Pincode</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.w_pincode}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.w_address}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date of bith & Age</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.date_of_birth}} : {{viewprofile.age}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0"> State</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.state}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">District </h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.district}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Education Qualification</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{viewprofile.education_qualification}}
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <a href="edit" class="btn btn-info ebtn">Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
+
+
+
+
+     
+
+
+
+
+      </div>
+
+      <!-- Gallery -->
+      <div class="row">
+        <div class="col-lg-12">
+          <form action="imgalley" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="text-center" style="font-weight: 800;">Photo Gallery <input id='fileid' type='file' hidden
+                name="imgalley" />
+              <button class="addbtn" type="button" id='buttonid'><i class="fas fa-plus"></i></button>
+              <button class="submitbutton" type="submit">submit</button>
+            </h2>
+          </form>
+        </div>
+
+        <div class="row">
+          {% for gallery in galleryimg %}
+          <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+           
+            <img src="/media/{{ gallery.picture }}" class="img-fluid img " alt="Boat on Calm Water">
+           
+          </div>
+          {% endfor %}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+            class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+        </div> -->
+      </div>
+      <!-- Gallery -->
+
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ------------------------------------------------review---------------------------------------------------------- -->
+
+
+  <!-- <div class="container">
+
+    <div class="row">
+      <div class="col-sm-7">
+        <hr />
+        <div class="review-block">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{% static 'img/p1.png' %}" class="img-fluid img-rounded">
+              <div class="review-block-name">
+                <h3>shahil</h3>
+              </div>
+              <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+            </div>
+            <div class="col-sm-9">
+              <div class="review-block-rate">
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="review-block-title">this was nice in buy</div>
+              <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
+                this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{% static 'img/p1.png' %}" class=" img-fluid">
+              <div class="review-block-name">
+                <h3>sreehari</h3>
+              </div>
+              <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+            </div>
+            <div class="col-sm-9">
+              <div class="review-block-rate">
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="review-block-title">this was nice in buy</div>
+              <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
+                this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{% static 'img/p1.png' %}" class="img-fluid img-rounded">
+              <div class="review-block-name">
+                <h3>shadil</h3>
+              </div>
+              <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+            </div>
+            <div class="col-sm-9">
+              <div class="review-block-rate">
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="review-block-title">this was nice in buy</div>
+              <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
+                this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{% static 'img/p1.png' %}" class=" img-fluid">
+              <div class="review-block-name">
+                <h3>harshin</h3>
+              </div>
+              <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+            </div>
+            <div class="col-sm-9">
+              <div class="review-block-rate">
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                  <span class="fas fa-star" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="review-block-title">this was nice in buy</div>
+              <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
+                this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+</div>
+
+
+<script>
+  // file upload
+  document.getElementById('buttonid').addEventListener('click', openDialog);
+
+  function openDialog() {
+    document.getElementById('fileid').click();
+  }
+        // end file upload
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+
+{% endblock %}
